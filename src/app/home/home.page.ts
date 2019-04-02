@@ -95,11 +95,10 @@ startListening(): void {
         language: this.opIdiomaOrig,
         showPartial: true
     };
-    
+    this.esperaTraduccion = true;
     this.speechRecognition.startListening(options).subscribe(
         (matches: Array<string>) => {
             if (matches && matches.length > 0) {
-              this.esperaTraduccion = true;
               this.speechRecognized = matches[0];
               this._servTraductor.traducirTexto(this.opIdiomaOrig.split("-")[0], this.opIdiomaTrad.split("-")[0], this.speechRecognized).subscribe(
                 (result) =>{
