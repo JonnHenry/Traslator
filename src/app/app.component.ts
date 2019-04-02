@@ -9,18 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  public appPages = [
-    {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    }
-  ];
+  
 
   constructor(
     private platform: Platform,
@@ -32,8 +21,21 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.statusBar.backgroundColorByHexString('#7e57ff');
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  salir() {
+    navigator['app'].exitApp();
+  }
+
+  menuOpened(){
+    this.statusBar.backgroundColorByHexString('#7044ff');
+  }
+
+  menuClosed(){
+    this.statusBar.backgroundColorByHexString('#7e57ff');
   }
 }

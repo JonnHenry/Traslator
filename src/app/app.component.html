@@ -1,20 +1,24 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu>
+    <ion-menu (ionWillOpen)="menuOpened()" (ionDidClose)="menuClosed()">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="tertiary">
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item [routerDirection]="'root'" routerLink='/home'>
+              <ion-icon slot="start" name="mic"></ion-icon>
+              <ion-label>Traslator</ion-label>
             </ion-item>
+
+            <ion-item (click)="salir()">
+              <ion-icon slot="start" name="exit"></ion-icon>
+              <ion-label>Salir</ion-label>
+            </ion-item>
+
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
