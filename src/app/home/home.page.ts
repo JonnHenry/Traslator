@@ -22,6 +22,10 @@ export class HomePage implements OnInit {
     codigoIdioma: "es-EC"
   },
   {
+    codigoIdioma: "de-DE",
+    idioma: "Aleman"
+  },
+  {
     idioma: "Japones",
     codigoIdioma: "ja-JP"
   },
@@ -41,15 +45,27 @@ export class HomePage implements OnInit {
     idioma: "Francés",
     codigoIdioma: "fr-FR"
   }];
-
+  
   public idiomaOrigen = [
     {
       codigoIdioma: "en-US",
       idioma: "Ingles"
     },
     {
+      codigoIdioma: "de-DE",
+      idioma: "Aleman"
+    },
+    {
       codigoIdioma: "es-EC",
       idioma: "Español"
+    },
+    {
+      idioma: "Portugués",
+      codigoIdioma: "pt-BR"
+    },
+    {
+      idioma: "Francés",
+      codigoIdioma: "fr-FR"
     }
   ]
 
@@ -69,6 +85,7 @@ export class HomePage implements OnInit {
 
   ngOnInit(): void {
     this.hasPermission();
+    this.speakSomething('Hola, bienvenido', "es-EC")
   }
 
   hasPermission(): void {
@@ -79,8 +96,8 @@ export class HomePage implements OnInit {
                 this.speechRecognition
                     .requestPermission()
                     .then(
-                        onfulfilled => console.log('Granted', onfulfilled),
-                        onerror => console.error('Denied', onerror)
+                        onfulfilled => this.presentToast('Acceso concedido'),
+                        onerror => console.error('Acceso denegado al microfono vuelva a abrir la aplicación')
                     );
             }
         });
@@ -116,9 +133,9 @@ startListening(): void {
         },
         onerror => {
             if (onerror.indexOf('Code=203') !== -1) {
-              this.presentToast('speechNotRecognized')
+              this.presentToast('Idioma no reconocido!')
             } else {
-              this.presentToast(onerror);
+              this.presentToast('Ha ocurrido un error inesperado, vuelva a intentarlo.');
             }
         }
     );
