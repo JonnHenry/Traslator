@@ -1,7 +1,0 @@
-{
-  "name": "traslator",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
