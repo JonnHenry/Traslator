@@ -1,8 +1,7 @@
 <h1>Traslator</h1>
 <h2>App usando Angular, ionic y capacitor</h2>
 <p>
-Traslator es una aplicación creada como proyecto personal y expuesta como un proyecto de tecnologico en el evento Global Azure Bootcamp 2019(Edición Special), evento llevado a cabo en la Universidada de Cuenca.
-La aplicación realiza un reconocimiento de la voz del usuario y entrega una traducción en el idioma seleccionado en forma de texto y en un archivo de audio que se reproduce si el usuario selecciona el botón que indica dicha opción. 
+Traslator es una aplicación creada como proyecto personal y expuesta como un proyecto de tecnologico en el evento Global Azure Bootcamp 2019(Edición Special), evento llevado a cabo en la Universidada de Cuenca. La aplicación realiza un reconocimiento de la voz del usuario y entrega una traducción en el idioma seleccionado en forma de texto y en un archivo de audio que se reproduce si el usuario selecciona dicha opción. 
 </p>
 <h2>Imagenes del funcionamiento de la app</h2>
 <h3><b>Login para insertar los codigos de funcionamiento de la App</b></h3>
