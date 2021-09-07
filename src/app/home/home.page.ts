@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
 
   public idiomaTraduccion = [
   {
-    idioma: "Ingles",
+    idioma: "Inglés",
     codigoIdioma: "en-US"
   },
   {
@@ -23,10 +23,10 @@ export class HomePage implements OnInit {
   },
   {
     codigoIdioma: "de-DE",
-    idioma: "Aleman"
+    idioma: "Alemán"
   },
   {
-    idioma: "Japones",
+    idioma: "Japonés",
     codigoIdioma: "ja-JP"
   },
   {
@@ -49,15 +49,15 @@ export class HomePage implements OnInit {
   public idiomaOrigen = [
     {
       codigoIdioma: "en-US",
-      idioma: "Ingles"
+      idioma: "Inglés"
     },
     {
-      idioma: "Japones",
+      idioma: "Japonés",
       codigoIdioma: "ja-JP"
     },
     {
       codigoIdioma: "de-DE",
-      idioma: "Aleman"
+      idioma: "Alemán"
     },
     {
       codigoIdioma: "es-EC",
@@ -100,8 +100,8 @@ export class HomePage implements OnInit {
                 this.speechRecognition
                     .requestPermission()
                     .then(
-                        onfulfilled => this.presentToast('Acceso concedido'),
-                        onerror => console.error('Acceso denegado al microfono vuelva a abrir la aplicación')
+                        onfulfilled => this.presentToast('Acceso concedido!'),
+                        onerror => console.error('Acceso denegado al micrófono vuelva a abrir la aplicación')
                     );
             }
         });
@@ -183,7 +183,6 @@ startListening(): void {
       },
       error  => {
         console.log(error)
-        //this.presentToast('Ha ocurrido un error inesperado, vuelva a intentarlo.');
         this.traducido = true;
         this.esperaTraduccion = false;
       })

@@ -28,9 +28,6 @@ export class ServicesTraslator {
       'Content-Type': 'application/json'});
       var url = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from='+idiomaEntrada+'&to='+ IdiomaSalida;
       return this._http.post(url, objetoEnvio,{headers: headers});
-    /*
-      [{'Text':'This is a fucking good idea.'}] para envioTexto
-    */
   }
 
 
